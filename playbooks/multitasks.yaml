@@ -1,0 +1,11 @@
+---
+- hosts: web
+  tasks: 
+    - name: install nginx
+      package:
+        name: nginx
+        state: present
+    - name: nginx status
+      service: 
+        name: nginx
+        state: stopped

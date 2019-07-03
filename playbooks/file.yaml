@@ -1,0 +1,6 @@
+---
+- hosts: web
+  tasks:
+    - file:
+        path: /tmp/gkkk
+        state: touch 

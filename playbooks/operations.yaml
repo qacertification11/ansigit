@@ -1,0 +1,11 @@
+---
+- hosts: web
+  tasks: 
+    - name: create user
+      user:  
+        name: pbuser1
+        state: present 
+    - name: create file 
+      file:
+        state: touch
+        path: /tmp/gk/test1
