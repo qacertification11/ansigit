@@ -1,0 +1,22 @@
+---
+- hosts: web
+  tasks: 
+    - name: create user test
+      user: 
+        name: test
+        uid: '8889'
+        home: /var/tmp/test  
+        state: present 
+    - name: create group grouptest  
+      group:
+        name: grouptest
+        gid: '7777' 
+        state: present
+    - name: create user usertest
+      user:
+        name: usertest
+        uid: '6666'
+        comment: my first user
+        group: '7777'
+        state: present
+

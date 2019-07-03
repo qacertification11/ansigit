@@ -1,0 +1,23 @@
+---
+- hosts: web
+  tasks:
+    - name: create user test
+      user:
+        name: test        
+        state: present
+    - name: create directory
+      file:
+        path: /var/tmp/testdir
+        owner: root        
+        state: directory
+    - name: create file
+      file:
+        path: /var/tmp/testdir/checkfile.txt
+        owner: test
+        state: touch
+    - name: copy log file to checkfile
+      copy:
+        src: /var/log/syslog        
+        dest: /var/tmp/testdir/checkfile.txt        
+        
+
